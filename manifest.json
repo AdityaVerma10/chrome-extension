@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "Tab Title Reader",
+    "version": "3.0",
+    "description": "Get the title of the current tab.",
+    "permissions": ["activeTab"],
+    "browser_action": {
+      "default_popup": "popup.html"
+    }
+
+}
+  
