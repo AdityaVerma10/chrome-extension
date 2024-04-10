@@ -1,12 +1,21 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Tab Title Reader",
     "version": "3.0",
     "description": "Get the title of the current tab.",
     "permissions": ["activeTab"],
-    "browser_action": {
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
       "default_popup": "popup.html"
-    }
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.linkedin.com/in/*"],
+        "js": ["content.js"]
+      }
+    ]
 
 }
   

@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>Tab Title Reader</title>
-  <script src="popup.js"></script>
+  <script src="popup.js" type="module"></script>
+
+  
   <style>
     body{
         width: 250px;
@@ -17,5 +19,8 @@
 <body>
   <button id="getTitleButton">Get Title of Current Tab</button>
   <div id="title"></div>
+  <button id="getLinkedindata">Collect data from Linkedin profiles</button>
+
+  <script src="background.js"></script>
 </body>
 </html>
