@@ -27,11 +27,12 @@ chrome.runtime.onMessage.addListener(async (request, sendResponse) => {
       },
       body: JSON.stringify(request.data),
     })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log("Data posted successfully:", res);
-        processNextProfile();
-      });
+    .then((res) => res.json())
+    .then((res) => {
+      console.log("Data posted successfully:", res);
+      processNextProfile();
+    });
   }
 });
+
 

@@ -25,3 +25,25 @@ let profiles = [
 document.querySelector("#getLinkedindata").addEventListener("click", () => {
   chrome.runtime.sendMessage({ action: "start", profiles });
 });
+
+document.getElementById("like").addEventListener("input", toggleButton);
+document.getElementById("comment").addEventListener("input", toggleButton);
+
+let likecommentCount = [0, 0];
+function toggleButton() {
+  const likeCount = document.getElementById("like").value;
+  const commentCount = document.getElementById("comment").value;
+  likecommentCount[0] = parseInt(likeCount);
+  likecommentCount[1] = parseInt(commentCount);
+
+  document.getElementById("start").disabled =
+    likeCount == "" || commentCount == "";
+}
+
+document.getElementById("start").addEventListener("click", function () {
+  chrome.tabs.create({ url: "https://www.linkedin.com/feed/" });
+  chrome.storage.local.set({
+    likeCount: likecommentCount[0],
+    commentCount: likecommentCount[1],
+  });
+});

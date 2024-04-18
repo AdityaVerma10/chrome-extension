@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Tab Title Reader</title>
-  <script src="popup.js" type="module"></script>
+  <head>
+    <title>Tab Title Reader</title>
+    <script src="popup.js" type="module"></script>
 
-  
-  <style>
-    body{
+    <style>
+      body {
         width: 250px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap:1rem;
-    }
-  </style>
-</head>
-<body>
-  <button id="getTitleButton">Get Title of Current Tab</button>
-  <div id="title"></div>
-  <button id="getLinkedindata">Collect data from Linkedin profiles</button>
+        gap: 1rem;
+      }
+      label {
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="getTitleButton">Get Title of Current Tab</button>
+    <div id="title"></div>
+    <button id="getLinkedindata">Collect data from Linkedin profiles</button>
 
-  <script src="background.js"></script>
-</body>
+    <label for="like">LikeCount</label>
+    <input type="number" name="likecount" id="like" />
+
+    <label for="comment">CommentCount</label>
+    <input type="number" name="commentcount" id="comment" />
+
+    <button id="start" disabled>Start</button>
+
+    <script src="background.js"></script>
+  </body>
 </html>
